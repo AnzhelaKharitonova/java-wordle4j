@@ -1,6 +1,5 @@
 package ru.yandex.practicum;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,17 +31,17 @@ public class WordleGame {
         this.log = log;
     }
 
-    public void reset() throws IOException {
+    public void reset() {
         answer = guessTheWord();
         log.println("Компьютер загадал слово - " + answer);
-        dictionaryOfHints = new WordleDictionary(new ArrayList<>(wholeDictionary.getWords()),log);
+        dictionaryOfHints = new WordleDictionary(new ArrayList<>(wholeDictionary.getWords()), log);
         steps = MAX_STEPS;
         isGameOngoing = true;
         resume = "";
         log.println("Игра загружена");
     }
 
-    public void makeMove(String input) throws InputException, WordNotFoundInDictionary {
+    public void makeMove(String input) {
         steps--;
         String mask = makeMask(input);
         resume = checkWithTheAnswer(input, mask);

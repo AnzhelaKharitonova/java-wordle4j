@@ -1,7 +1,8 @@
 package ru.yandex.practicum;
 
-import java.io.*;
-import java.util.Random;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.Scanner;
 
 /*
@@ -16,7 +17,7 @@ import java.util.Scanner;
 public class Wordle {
     public static final String fileName = "words_ru.txt";
 
-    public static void main(String[] args) throws InputException, WordNotFoundInDictionary, FileNotFoundException {
+    public static void main(String[] args) {
         try {
             Writer writer = new FileWriter("log.txt");
             PrintWriter log = new PrintWriter(writer, true);
@@ -35,7 +36,7 @@ public class Wordle {
         }
     }
 
-    static void play(WordleGame game, PrintWriter log) throws InputException, WordNotFoundInDictionary {
+    static void play(WordleGame game, PrintWriter log)   {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Вам нужно угадать слово из пяти букв \n у вас есть 6 попыток \n Enter - дать подсказку.");
