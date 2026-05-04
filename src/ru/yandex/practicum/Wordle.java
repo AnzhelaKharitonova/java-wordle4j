@@ -15,14 +15,14 @@ import java.util.Scanner;
     вывести состояние игры и конечный результат
  */
 public class Wordle {
-    public static final String fileName = "words_ru.txt";
+    public static final String FILE_NAME = "words_ru.txt";
 
     public static void main(String[] args) {
         try {
             Writer writer = new FileWriter("log.txt");
             PrintWriter log = new PrintWriter(writer, true);
             try {
-                WordleDictionary dictionary = new WordleDictionaryLoader(log).load(fileName);
+                WordleDictionary dictionary = new WordleDictionaryLoader(log).load(FILE_NAME);
                 WordleGame game = new WordleGame(dictionary, log);
 
                 game.reset();
@@ -36,7 +36,7 @@ public class Wordle {
         }
     }
 
-    static void play(WordleGame game, PrintWriter log)   {
+    private static void play(WordleGame game, PrintWriter log)   {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Вам нужно угадать слово из пяти букв \n у вас есть 6 попыток \n Enter - дать подсказку.");

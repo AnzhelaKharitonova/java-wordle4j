@@ -126,6 +126,9 @@ public class WordleGame {
             throw new WordNotFoundInDictionary("Такого слова нет в словаре!");
         }
     }
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
 
     private String makeMask(String input) {
         StringBuilder sb = new StringBuilder();
@@ -143,9 +146,5 @@ public class WordleGame {
 
     private String guessTheWord() {
         return wholeDictionary.getRandomWord();
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
     }
 }
