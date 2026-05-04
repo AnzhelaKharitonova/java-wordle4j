@@ -126,6 +126,7 @@ public class WordleGame {
             throw new WordNotFoundInDictionary("Такого слова нет в словаре!");
         }
     }
+
     public void setAnswer(String answer) {
         this.answer = answer;
     }
